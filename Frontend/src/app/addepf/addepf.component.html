@@ -1,0 +1,62 @@
+<form [formGroup]="epfForm" validate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>EPF Deatails</mat-card-title>
+    </mat-card-header>
+
+<mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Employee Number" formControlName="employeeNumber">
+              <mat-option *ngFor="let e of employee" [value]="e.employeeNumber">
+                {{ e.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="epfForm.controls['employeeNumber'].hasError('required')">
+              Employe Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="EPF code" formControlName="epfcode">
+            <mat-error *ngIf="epfForm.controls['epfcode'].hasError('required')">
+              EPF code is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Month" type ="date" formControlName="month">
+            <mat-error *ngIf="epfForm.controls['month'].hasError('required')">
+              Month is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Salary" type="number" formControlName="salary">
+            <mat-error *ngIf="epfForm.controls['salary'].hasError('required')">
+              Salary is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      
+     
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

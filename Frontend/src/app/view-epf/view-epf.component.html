@@ -1,0 +1,32 @@
+<br><br>
+
+<table id="style">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">EPF Code</th>
+        <th scope="col">Office Code</th>
+        <th scope="col">Office Name</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let e of epf; let i = index">
+        <td scope="row" >{{i+1}}</td>
+        <td>{{e.epfcode}}</td>
+        <td>{{e.officeCode}}</td>
+        <td>{{e.officeName}}</td>
+        <td>{{e.firstName}}</td>
+        <td>{{e.lastName}}</td>
+        <td>{{e.salary}}</td>
+        <td>{{e.total}}</td>
+    </tr>
+    </tbody>
+
+    <tbody>
+      
+    </tbody>
+  </table>
